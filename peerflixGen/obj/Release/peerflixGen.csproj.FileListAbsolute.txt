@@ -1,0 +1,7 @@
+c:\users\joao_\onedrive\documentos\visual studio 2017\Projects\peerflixGen\peerflixGen\bin\Release\peerflixGen.exe.config
+c:\users\joao_\onedrive\documentos\visual studio 2017\Projects\peerflixGen\peerflixGen\bin\Release\peerflixGen.exe
+c:\users\joao_\onedrive\documentos\visual studio 2017\Projects\peerflixGen\peerflixGen\bin\Release\peerflixGen.pdb
+c:\users\joao_\onedrive\documentos\visual studio 2017\Projects\peerflixGen\peerflixGen\obj\Release\peerflixGen.Properties.Resources.resources
+c:\users\joao_\onedrive\documentos\visual studio 2017\Projects\peerflixGen\peerflixGen\obj\Release\peerflixGen.csproj.GenerateResource.Cache
+c:\users\joao_\onedrive\documentos\visual studio 2017\Projects\peerflixGen\peerflixGen\obj\Release\peerflixGen.exe
+c:\users\joao_\onedrive\documentos\visual studio 2017\Projects\peerflixGen\peerflixGen\obj\Release\peerflixGen.pdb
