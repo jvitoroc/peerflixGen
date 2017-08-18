@@ -9,21 +9,53 @@ namespace peerflixUI
     public partial class peerflix : Form
     {
 
-        System.Object[] playersNames = new System.Object[3];
-        string[] playerFlags = new string[3];
+        private string[] playersNames = new string[10];
+        private string[] playerFlags = new string[10];
+
         public peerflix()
         {
             InitializeComponent();
+        }
+
+        private void peerflix_Load(object sender, EventArgs e)
+        {
             if (!Directory.Exists("node_modules"))
             {
                 enableStart(false);
             }
+
+            //Adding the flags
             playersNames[0] = "VLC media player";
-            playersNames[1] = "AirPlay";
-            playersNames[2] = "mplayer";
             playerFlags[0] = "-v";
+
+            playersNames[1] = "AirPlay";
             playerFlags[1] = "-s";
+
+            playersNames[2] = "mplayer";
             playerFlags[2] = "-m";
+
+            playersNames[3] = "smplayer";
+            playerFlags[3] = "-g";
+
+            playersNames[4] = "MPC-HC player";
+            playerFlags[4] = "--mpchc";
+
+            playersNames[5] = "Potplayer";
+            playerFlags[5] = "--potplayer";
+
+            playersNames[6] = "mpv";
+            playerFlags[6] = "-k";
+
+            playersNames[7] = "omx";
+            playerFlags[7] = "-o";
+
+            playersNames[8] = "webplay";
+            playerFlags[8] = "-w";
+
+            playersNames[9] = "omx using audio jack";
+            playerFlags[9] = "-j";
+
+            //Add the players to the "Pick a player" combobox
             player.Items.AddRange(playersNames);
             enableAdvanced(false);
         }
@@ -32,7 +64,6 @@ namespace peerflixUI
         {
             aditionalFlags.Enabled = boolean;
             additionalLabel.Enabled = boolean;
-            advancedTooltip.Enabled = boolean;
         }
 
         private void enableStart(bool boolean)
@@ -82,6 +113,7 @@ namespace peerflixUI
 
         }
 
+        //Open a .torrent file
         private void button1_Click(object sender, EventArgs e)
         {
             Stream myStream = null;
@@ -108,6 +140,7 @@ namespace peerflixUI
             }
         }
 
+        //Play
         private void button1_Click_1(object sender, EventArgs e)
         {
             int selectedPlayer = player.SelectedIndex;
@@ -129,21 +162,13 @@ namespace peerflixUI
             else
                 cPlayerFlag = " " + playerFlags[selectedPlayer];
 
-            string command = "/K "+cmd+" \"" + input.Text + "\"" + cPlayerFlag;
+            string command = cmd+" \"" + input.Text + "\"" + cPlayerFlag;
             if (advanced.Checked)
             {
                 command += " " + aditionalFlags.Text;
             }
-            Process p = new Process();
-            p.StartInfo.FileName = "CMD.exe";
-            p.StartInfo.Arguments = command;
-            p.Start();
-        }
 
-        private void openWebsite(string url)
-        {
-            var startInfo = new ProcessStartInfo("explorer.exe", url);
-            Process.Start(startInfo);
+            UsefulMethods.runCommand(Application.StartupPath, command, false);
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -151,6 +176,7 @@ namespace peerflixUI
 
         }
 
+        //Enable advanced options
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             enableAdvanced(advanced.Checked);
@@ -171,24 +197,22 @@ namespace peerflixUI
 
         }
 
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-            Flags.Show("ola",null);
-        }
-
+        //Open the Node.js homepage
         private void downloadNodejsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openWebsite(@"https://nodejs.org/en/");
+            UsefulMethods.openWebsite(@"https://nodejs.org/en/");
         }
 
+        //Oen the GitHub of this project
         private void gitHubToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openWebsite(@"https://github.com/mafintosh/peerflix");
+            UsefulMethods.openWebsite(@"https://github.com/jvitoroc/peerflixGen");
         }
 
+        //Open the GitHub of the original peerflix
         private void peerflixToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openWebsite(@"https://github.com/mafintosh/peerflix");
+            UsefulMethods.openWebsite(@"https://github.com/mafintosh/peerflix");
         }
 
         private void fILEToolStripMenuItem_Click(object sender, EventArgs e)
@@ -201,14 +225,13 @@ namespace peerflixUI
 
         }
 
+        //Download the modules locally
         private void downloadModulesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process p = new Process();
-            p.StartInfo.FileName = "CMD.exe";
-            p.StartInfo.Arguments = "/K npm install";
-            p.Start();
+            
         }
 
+        //Run "peerflix" instead of "node app"
         private void globalMode_CheckedChanged(object sender, EventArgs e)
         {
             if (Directory.Exists("node_modules") && !globalMode.Checked)
@@ -222,6 +245,63 @@ namespace peerflixUI
             {
                 enableStart(false);
             }
+        }
+
+        private void locallyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsefulMethods.runCommand(Application.StartupPath, "npm install", true);
+        }
+
+        private void globallyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsefulMethods.runCommand(Application.StartupPath, "npm install -g peerflix", false);
+        }
+    }
+
+    static class UsefulMethods
+    {
+
+        //Run a given command
+        public static void runCommand(string where, string command, bool admin = false)
+        {
+            const int ERROR_CANCELLED = 1223;
+
+            Process p = new Process();
+            p.StartInfo.FileName = "cmd.exe";
+            if (admin)
+            {
+                p.StartInfo.UseShellExecute = true;
+                p.StartInfo.Verb = "runas";
+            }
+            p.StartInfo.Arguments = "/c cd " + where + " & " + command;
+
+            if (admin)
+            {
+                try
+                {
+                    p.Start();
+                    p.WaitForExit();
+                }
+                catch (Win32Exception ex)
+                {
+                    if (ex.NativeErrorCode == ERROR_CANCELLED)
+                        MessageBox.Show("This operation needs administrator permission.", "peerflixGen");
+                    else
+                        throw;
+                }
+            }
+            else
+            {
+                p.Start();
+                p.WaitForExit();
+            }
+        }
+
+        //Open a given website
+        public static void openWebsite(string url)
+        {
+            var startInfo = new ProcessStartInfo("explorer.exe", url);
+            Process.Start(startInfo);
         }
     }
 }

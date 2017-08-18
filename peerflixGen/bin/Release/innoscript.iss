@@ -16,7 +16,7 @@ AppUpdatesURL=https://github.com/jvitoroc/peerflixGen
 DefaultDirName={pf}\peerflixGen
 DisableProgramGroupPage=yes
 LicenseFile=C:\Users\joao_\OneDrive\Documentos\Visual Studio 2017\Projects\peerflixGen\peerflixGen\bin\Release\licensemit.txt
-OutputBaseFilename=setup
+OutputBaseFilename=peerflix-0.1
 Compression=lzma
 SolidCompression=yes
 

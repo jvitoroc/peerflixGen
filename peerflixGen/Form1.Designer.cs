@@ -37,18 +37,20 @@
             this.play = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fILEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.downloadModulesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.downloadNodejsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gitHubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.peerflixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.advanced = new System.Windows.Forms.CheckBox();
             this.additionalLabel = new System.Windows.Forms.Label();
             this.aditionalFlags = new System.Windows.Forms.TextBox();
             this.Flags = new System.Windows.Forms.ToolTip(this.components);
             this.advancedTooltip = new System.Windows.Forms.Label();
-            this.downloadNodejsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gitHubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.peerflixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fILEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.downloadModulesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.globalMode = new System.Windows.Forms.CheckBox();
+            this.locallyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.globallyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,6 +133,25 @@
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // fILEToolStripMenuItem
+            // 
+            this.fILEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.downloadModulesToolStripMenuItem});
+            this.fILEToolStripMenuItem.Name = "fILEToolStripMenuItem";
+            this.fILEToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fILEToolStripMenuItem.Text = "File";
+            this.fILEToolStripMenuItem.Click += new System.EventHandler(this.fILEToolStripMenuItem_Click);
+            // 
+            // downloadModulesToolStripMenuItem
+            // 
+            this.downloadModulesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.locallyToolStripMenuItem,
+            this.globallyToolStripMenuItem});
+            this.downloadModulesToolStripMenuItem.Name = "downloadModulesToolStripMenuItem";
+            this.downloadModulesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.downloadModulesToolStripMenuItem.Text = "Download modules";
+            this.downloadModulesToolStripMenuItem.Click += new System.EventHandler(this.downloadModulesToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -140,6 +161,27 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // downloadNodejsToolStripMenuItem
+            // 
+            this.downloadNodejsToolStripMenuItem.Name = "downloadNodejsToolStripMenuItem";
+            this.downloadNodejsToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.downloadNodejsToolStripMenuItem.Text = "Node.js Website";
+            this.downloadNodejsToolStripMenuItem.Click += new System.EventHandler(this.downloadNodejsToolStripMenuItem_Click);
+            // 
+            // gitHubToolStripMenuItem
+            // 
+            this.gitHubToolStripMenuItem.Name = "gitHubToolStripMenuItem";
+            this.gitHubToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.gitHubToolStripMenuItem.Text = "Open GitHub";
+            this.gitHubToolStripMenuItem.Click += new System.EventHandler(this.gitHubToolStripMenuItem_Click);
+            // 
+            // peerflixToolStripMenuItem
+            // 
+            this.peerflixToolStripMenuItem.Name = "peerflixToolStripMenuItem";
+            this.peerflixToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.peerflixToolStripMenuItem.Text = "peerflix";
+            this.peerflixToolStripMenuItem.Click += new System.EventHandler(this.peerflixToolStripMenuItem_Click);
             // 
             // advanced
             // 
@@ -190,43 +232,6 @@
             this.advancedTooltip.Text = "?";
             this.Flags.SetToolTip(this.advancedTooltip, "-a, --subtitles");
             // 
-            // downloadNodejsToolStripMenuItem
-            // 
-            this.downloadNodejsToolStripMenuItem.Name = "downloadNodejsToolStripMenuItem";
-            this.downloadNodejsToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.downloadNodejsToolStripMenuItem.Text = "Node.js Website";
-            this.downloadNodejsToolStripMenuItem.Click += new System.EventHandler(this.downloadNodejsToolStripMenuItem_Click);
-            // 
-            // gitHubToolStripMenuItem
-            // 
-            this.gitHubToolStripMenuItem.Name = "gitHubToolStripMenuItem";
-            this.gitHubToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.gitHubToolStripMenuItem.Text = "Open GitHub";
-            this.gitHubToolStripMenuItem.Click += new System.EventHandler(this.gitHubToolStripMenuItem_Click);
-            // 
-            // peerflixToolStripMenuItem
-            // 
-            this.peerflixToolStripMenuItem.Name = "peerflixToolStripMenuItem";
-            this.peerflixToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.peerflixToolStripMenuItem.Text = "peerflix";
-            this.peerflixToolStripMenuItem.Click += new System.EventHandler(this.peerflixToolStripMenuItem_Click);
-            // 
-            // fILEToolStripMenuItem
-            // 
-            this.fILEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.downloadModulesToolStripMenuItem});
-            this.fILEToolStripMenuItem.Name = "fILEToolStripMenuItem";
-            this.fILEToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fILEToolStripMenuItem.Text = "File";
-            this.fILEToolStripMenuItem.Click += new System.EventHandler(this.fILEToolStripMenuItem_Click);
-            // 
-            // downloadModulesToolStripMenuItem
-            // 
-            this.downloadModulesToolStripMenuItem.Name = "downloadModulesToolStripMenuItem";
-            this.downloadModulesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.downloadModulesToolStripMenuItem.Text = "Download modules";
-            this.downloadModulesToolStripMenuItem.Click += new System.EventHandler(this.downloadModulesToolStripMenuItem_Click);
-            // 
             // globalMode
             // 
             this.globalMode.AutoSize = true;
@@ -237,6 +242,20 @@
             this.globalMode.Text = "Global modules";
             this.globalMode.UseVisualStyleBackColor = true;
             this.globalMode.CheckedChanged += new System.EventHandler(this.globalMode_CheckedChanged);
+            // 
+            // locallyToolStripMenuItem
+            // 
+            this.locallyToolStripMenuItem.Name = "locallyToolStripMenuItem";
+            this.locallyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.locallyToolStripMenuItem.Text = "Locally";
+            this.locallyToolStripMenuItem.Click += new System.EventHandler(this.locallyToolStripMenuItem_Click);
+            // 
+            // globallyToolStripMenuItem
+            // 
+            this.globallyToolStripMenuItem.Name = "globallyToolStripMenuItem";
+            this.globallyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.globallyToolStripMenuItem.Text = "Globally";
+            this.globallyToolStripMenuItem.Click += new System.EventHandler(this.globallyToolStripMenuItem_Click);
             // 
             // peerflix
             // 
@@ -261,7 +280,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "peerflix";
-            this.Text = "peerflix GUI";
+            this.Text = "peerflixGen";
+            this.Load += new System.EventHandler(this.peerflix_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -291,6 +311,8 @@
         private System.Windows.Forms.ToolStripMenuItem fILEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem downloadModulesToolStripMenuItem;
         private System.Windows.Forms.CheckBox globalMode;
+        private System.Windows.Forms.ToolStripMenuItem locallyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem globallyToolStripMenuItem;
     }
 }
 

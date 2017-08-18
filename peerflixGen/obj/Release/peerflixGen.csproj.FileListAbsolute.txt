@@ -5,3 +5,5 @@ c:\users\joao_\onedrive\documentos\visual studio 2017\Projects\peerflixGen\peerf
 c:\users\joao_\onedrive\documentos\visual studio 2017\Projects\peerflixGen\peerflixGen\obj\Release\peerflixGen.csproj.GenerateResource.Cache
 c:\users\joao_\onedrive\documentos\visual studio 2017\Projects\peerflixGen\peerflixGen\obj\Release\peerflixGen.exe
 c:\users\joao_\onedrive\documentos\visual studio 2017\Projects\peerflixGen\peerflixGen\obj\Release\peerflixGen.pdb
+C:\Users\joao_\onedrive\documentos\visual studio 2017\Projects\peerflixGen\peerflixGen\obj\Release\peerflixGen.csprojResolveAssemblyReference.cache
+C:\Users\joao_\onedrive\documentos\visual studio 2017\Projects\peerflixGen\peerflixGen\obj\Release\peerflixUI.peerflix.resources
