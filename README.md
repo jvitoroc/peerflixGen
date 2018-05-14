@@ -3,7 +3,7 @@
 <hr>
 <h4>Instructions</h4>
 <ol>
-  <li>You must install <a href="https://nodejs.org/en/">Node.js</a>. Ei gustavoooooo</li>
+  <li>You must install <a href="https://nodejs.org/en/">Node.js</a>.</li>
   <li>Open peerflixGen and go to "File" > "Download modules" > choose between locally and globally. Wait for the download complete.</li>
   <li>Fill the desired text boxes.</li>
   <li>Hit Play and wait a minute and there it is.</li>
